@@ -1,0 +1,17 @@
+{% extends '_base.html' %}
+
+{% block pagetitle %}  Home Page {% endblock %}
+{% block content %}
+    <h1> Home Page</h1>
+           <div class="mx-2 text-white">
+            {% if user.is_authenticated %}
+                <div class="d-inline align-middle">Welcome {{ user.username }}</div>
+                <form method="post" action="{% url 'logout' %}" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary">Logout</button>
+                </form>
+            {% else %}
+                <a class="btn btn-primary" href="{% url 'login' %}">Login</a>|
+                <a class="btn btn-primary" href="{% url 'signup' %}">Signup</a>
+            {% endif %}
+{% endblock %}
