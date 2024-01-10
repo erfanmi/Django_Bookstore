@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     # my apps
     'accounts',
     'pages',
+    'books',
     # django apps
     'django.contrib.admin',
     'django.contrib.auth',
