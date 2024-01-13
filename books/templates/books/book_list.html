@@ -1,8 +1,17 @@
 {% extends '_base.html' %}
+{% block page_title %} لیست کتابها {% endblock %}
 
-{% block page_title %} لیست کتابها {%  endblock %}
 {% block content %}
-    {% for book in books %}
-     <h1>{{ book.title }}<h1>
-    {% endfor %}
-{% endblock  %}
+    <div class="row row-cols-1 row-cols-md-3 g-4" style="margin-top: 20px;">
+        {% for book in books %}
+            <div class="col mb-4">
+                <div class="card h-100 border-0 shadow">
+                    <div class="card-body text-center">
+                        <a href="{{ book.get_absolute_url }}"  class="card-title fs-5 fw-bold" dir="rtl">{{ book.title }}</a>
+                        <p class="card-text text-muted" dir="rtl">{{ book.content }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
