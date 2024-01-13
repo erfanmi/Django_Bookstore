@@ -1,0 +1,14 @@
+{% extends '_base.html' %}
+
+{% block page_title %}ایجاد کتاب جدید{% endblock %}
+
+{% block content %}
+    <div class="create-book">
+        <h2>کتاب جدید اضافه کن</h2>
+         <form method="post" action="">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">ایجاد!</button>
+        </form>
+    </div>
+{% endblock %}
