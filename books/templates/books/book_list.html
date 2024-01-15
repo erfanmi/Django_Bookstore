@@ -7,8 +7,8 @@
             <div class="col mb-4">
                 <div class="card h-100 border-0 shadow">
                     <div class="card-body text-center">
-                        <a href="{{ book.get_absolute_url }}"  class="card-title fs-5 fw-bold" dir="rtl">{{ book.title }}</a>
-                        <p class="card-text text-muted" dir="rtl">{{ book.content }}</p>
+                        <a href="{{ book.get_absolute_url }}"  class="card-title fs-5 fw-bold" dir="rtl">{{ book.title|capfirst }}</a>
+                        <p class="card-text text-muted" dir="rtl">{{ book.content|truncatewords:21 }}</p>
                     </div>
                 </div>
             </div>

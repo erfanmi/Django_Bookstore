@@ -5,11 +5,11 @@
 {% block content %}
     <div class="book-details">
         <div class="book-header">
-            <h1 class="title">{{ book.title }}</h1>
-            <p class="author">By {{ book.author }}</p>
+            <h1 class="title">{{ book.title|capfirst }}</h1>
+            <p class="author">By {{ book.author|capfirst }}</p>
         </div>
         <div class="content">
-            <p class="description">{{ book.content }}</p>
+            <p class="description">{{ book.content|linebreaks }}</p>
             <p>{{ book.price }}</p>
             <a href="{% url 'books_list' %}">لیست کتابها</a>
             <a  class= "btn btn-warning"  href= "{% url 'book_update' book.id %}">ویرایش</a>
